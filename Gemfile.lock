@@ -132,6 +132,7 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
+  bundler
   coffee-rails (~> 4.0.0)
   coffee-script-source (= 1.8.0)
   devise
