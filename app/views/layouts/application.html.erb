@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Elective Registration</title>
+  <nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+  <a class="navbar-brand" href=""><b>OnBook</b></a>
+  <% if user_signed_in? %>
+  <ul class="nav navbar-nav navbar-right">
+    <li><%= link_to "Sign Out",destroy_user_session_path ,:method => :delete %></li>
+    <li><%= link_to 'New Bookmark', new_bookmark_path %></li>
+  </ul>
+  <% else %>
+  <ul class="nav navbar-nav navbar-right">
+    <li><a href="/users/sign_up">Sign Up</a></li>
+    <li><a href="/users/sign_in">Sign In</a></li>
+  </ul>
+  <% end %>
+  </div>
+  </nav>
+  <title>OnBook</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="container">
+<% if notice %>
+  <p class="alert alert-success"><%= notice %></p>
+<% end %>
+<% if alert %>
+  <p class="alert alert-danger"><%= alert %></p>
+<% end %>
+<%= yield %>
+</div>
+<br>
+<div class="container">
+        <p class="text-muted text-center">&copy <b>Lebowski DEVS 2015</b></p>
+</div>
+</body>
+</html>
